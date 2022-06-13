@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var books = ["van", "su", "dia"] 
+        //             0      1     2
+
+        //do dai: 3 
+        console.log(books)
+        console.log(books.length)
+
+        // truy cap phan tu lay ra <Van>
+        console.log(books[0]);  
+        console.log(books[1]);
+        console.log(books[2]);
+        // thay doi gia tri phan tu
+        books[0]= 'toan';
+        books[1]= 'ly';
+        books[2]= 'hoa';
+        //them gia tri vao mang
+        books[3]= 'tieng anh';
+        books[4]= 'hoa hoc';
+        //cach khac them gia tri
+        books.push('sinh hoc')
+        
+        // duyet mang
+        for (var i = 0; i < books.length; i++){
+            console.log (books[i])
+        }
+
+        
+        
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- c4 -->
+    <script>
+        function bai4() {
+            class Circle {
+                constructor(x, y, width, height, radius, color,) {
+                    this.x = x;
+                    this.y = y;
+                    this.width = width;
+                    this.height = height;
+                    this.radius = radius;
+                    this.color = color;
+                }
+                render() {
+                    var c = document.getElementById('game')
+                    var nv2 = c.getContext("2d")
+                    nv2.beginPath();
+                    nv2.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+                    nv2.fill();
+                }
+            } var circle = new Circle(10, 10, 100, '#FF1000')
+            circle.render()
+        }
+    </script>
+
+
+</body>
+</html>

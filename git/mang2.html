@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // cách 1
+        var books1 = ['van','su','dia']
+        var books2 = ['toan','ly', 'hoa']
+        var booksall = [books1, books2]
+        console.log(booksall)
+
+        // cách 2
+        var books1 = ['van','su','dia']
+        var books2 = ['toan','ly', 'hoa']
+        var booksall = [
+        ['van','su','dia'],  //0 
+        // 0     1    2   
+        ['toan','ly', 'hoa'] //1
+        // 0     1     2 
+        ]
+        console.log(booksall)
+        
+        //lấy ra phân tư
+        console.log(booksall[0]) // ['van','su','dia'],
+                                    //Lấy ra
+        console.log(booksall[0][0]) //van
+        console.log(booksall[0][1]) //su
+        console.log(booksall[0][2]) //dia 
+
+        console.log(booksall[1]) // ['toan','ly', 'hoa']
+                                    //♥LẤY RA    
+        console.log(booksall[1][0])  //toan
+        console.log(booksall[1][1])  //ly
+        console.log(booksall[1][2])  //hoa
+         
+        //thay đổi phân tư
+        booksall[1][1] = 'vật lí'  //thay ly - vật lý
+        booksall[1][2] = 'hóa hoc' //thay hoa - hóa học 
+        booksall[0][0] = 'văn học' //thay văn - văn học
+        console.log(booksall)
+
+        //duyệt
+        //vòng lặp
+        for (var i=0;i<=1;i++){
+            // i=0
+            //   k=0
+            //   k=1
+            //   k=2
+            //  booksall=0
+            //  booksall=1
+            //  booksall=2 
+            for (var k=0;k<=2;k++){
+            //     i=1
+            //   k=0
+            //   k=1
+            //   k=2
+            //  booksall=0
+            //  booksall=1
+            //  booksall=2 
+                console.log (booksall [i][k] );
+            }
+        }
+
+        // thêm phân tử
+        booksall[0][3] = 'shin học'
+        console.log(booksall)
+
+        //tạo mảng mẹ
+        var number=[];
+        for (var i=0; i<=2; i++){
+            number[i]=[];
+            for (var k=0; k<=2; k++){
+                number[i][k]= i + "-" + k;
+            }
+            console.log(number)
+        }
+
+  
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
