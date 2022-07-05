@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="DemoCanvas" width="500" height="600"></canvas> 
+    <script src="hcn.js"></script>
+    <script>
+        var chunhat = function(dai,rong){
+            this.dai = dai,
+            this.rong = rong,
+            this.dientich = function(){
+               return dai*rong
+            }
+            this.chuvi=function(){
+               return (dai+rong)*2
+            }
+
+           
+        }
+        var chunhat1 = new chunhat(20, 30)
+        
+        console.log(chunhat1.dai)
+        console.log(chunhat1.rong)
+        // console.log(circle1.getRadius())
+        console.log(chunhat1.dientich())
+        console.log(chunhat1.chuvi())
+        
+    </script>
+
+</body>
+</html>

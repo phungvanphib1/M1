@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cong(a, b) {
+            return a + b
+        }
+        function tru(a, b) {
+            return a - b
+        }
+        function nhan(a, b) {
+            return a * b
+        }
+        function chia(a, b) {
+            return a / b
+        }
+        function maytinh(a, b, tinh) {
+            var kq;
+
+            switch (tinh) {
+                case 'cong':
+                    kq = cong(a, b)
+                    break;
+                case 'tru':
+                    kq = tru(a, b)
+                    break;  
+                case 'nhan':
+                    kq = nhan(a, b)
+                    break;
+                case 'chia':
+                    kq = chia(a, b)
+                    break;
+            }
+
+            return kq
+
+        }
+
+        console.log(maytinh(7, 5, 'cong'))
+        console.log(maytinh(7, 5, 'tru'))
+        console.log(maytinh(7, 5, 'nhan'))
+        console.log(maytinh(7, 5, 'chia'))
+
+    </script>
+</body>
+
+</html>

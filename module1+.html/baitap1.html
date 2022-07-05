@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+    
+    <!-- <script>
+        // bài1
+        var a = parseInt(prompt('nhập số a'))
+        var b = parseInt(prompt('nhập số b'))
+        if (a%b==0){
+            document.write(a + 'chia hết cho ' + b )
+
+        }else{
+            document.write(a + 'Không chia hết cho ' + b )
+        }
+    </script> -->
+    <!-- <script>
+        // bài2
+        var t= prompt('nhập tuổi của bạn')
+        if(t >= 14 && t <= 18){
+            document.write(t + ' Bạn đủ điều kiện nhập học')
+            
+        }else if (t > 18){
+            document.write(t+' bạn vượt quá độ tuổi nhập học')
+        }else{
+            document.write(t + ' bạn chưa đủ tuổi nhập học')
+        }
+    </script> -->
+
+    <!-- <script>
+        //bài 3
+        var songuyen = prompt('Nhập số?')
+        if(songuyen>0){
+            document.write('số bạn vừa nhập là :'+ songuyen+' lớn hơn 0')
+
+        }else if(songuyen<0){
+            document.write('số bạn vừa nhập là :'+ songuyen+' bé hơn 0')
+
+        }else{
+            document.write('số bạn vừa nhập là :'+ songuyen+' bằng 0')
+            
+        }
+    </script> -->
+    <!-- <script>
+        // bài 4
+        var a= prompt('nhập số đầu tiên')
+        var b= prompt('nhập số thứ hai')
+        var c= prompt('nhập số thứ ba')
+        if (a>b&&a>c){
+            document.write(a + 'a là số lớn nhất')
+
+        }else if (b>a&&b>c){
+            document.write(b +'b là số lớn nhất')
+
+        }else if (c>a&&c>b){
+            document.write(c +'c là số lớn nhất')
+        }else{
+            document.write('bằng nhau')
+        }
+
+    </script> -->
+    <!-- <script>
+        //bài 5
+        var a= Number(prompt('điểm kiểm tra giữa kì'))
+        var b= Number(prompt('điểm kiểm tra cuối kì'))
+        if (a<=10&&b<=10){
+            var tong= (a+b)/2
+            // var dtb=tong/2
+            if(tong>=8){
+                document.write('điểm trung bình:'+tong+' đạt học sinh giỏi')
+
+            }else if(tong>=6.5&&tong<8){
+                document.write('điểm trung bình:'+tong+' đạt học sinh khá')
+
+            }else if(tong<6.5&&tong>3) {
+                document.write('điểm trung bình:'+tong+' đạt học sinh trung bình')
+
+            }else{
+                document.write('điểm trung bình:'+tong+' ở lại lớp không nói nhiều')
+            }
+
+        }else{
+            document.write(a +' hoặc '+ b+' nhập sai')
+        }
+    </script> -->
+    <!-- <script>
+        // bài 6
+        var ds=Number(prompt('nhập doanh số của bạn tháng này!'))
+        if (ds>0){
+            var tien=ds*30000
+            document.write('doanh số của bạn:'+ds+' = '+tien+'vnd')
+        }else{
+            document.write('không có hoa hồng')
+        }
+    </script> -->
+
+    <script>
+        //bài 7
+    var tiencuocbatbuoc = 25000
+    var phutgoi = Number(prompt('nhập số phút gọi')) 
+    if (phutgoi<=50){
+        var cuoc = phutgoi * 600
+        document.write('Gói 1 tiền cước đt của bạn là '+(cuoc+tiencuocbatbuoc)+'vnd')
+    }else if (phutgoi>50&&phutgoi<150){
+        var cuoc = phutgoi * 400
+        document.write('30% Gói 2 tiền cước đt của bạn là '+(cuoc+tiencuocbatbuoc)+'vnd')
+    }else{
+        var cuoc =phutgoi*200
+        document.write('60% tiền cước đt của bạn là '+(cuoc+tiencuocbatbuoc)+'vnd')
+
+    }
+
+    </script>    
+    
+</body>
+</html>

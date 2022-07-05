@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        
+        for (var i=0;i<=10;i++){
+            if (i%2==0){
+                console.log(i)
+            }
+        }
+        
+    </script> -->
+    <!-- <script>
+        var x=5
+        var y=4
+        var lt=1
+        for (var i=1;i<=4;i++){
+            lt=lt*x
+            
+        }console.log(lt)
+    </script> -->
+    <!-- <script>
+        var i=0
+        while(i<=10){
+            if (i%2==0){
+                console.log(i);
+                
+            }
+            i++;
+        }
+    </script> -->
+    <!-- <script>
+        var i = 0;
+        do{
+            if(i%2==0){
+                console.log(i)
+            }
+            i++;
+        }while(i<=10)
+            
+    </script> -->
+
+    <!-- <script>
+        for (var i =1;i<=10;i++){
+            if(i==3 ||i==5){
+                continue;
+            }if(i==9){
+                break
+            }
+            console.log(i)
+        }
+    </script> -->
+
+    <!-- // vòng lặp lòng nhau -->
+
+    <!-- <script>
+        for (var i=2;i<10;i++){
+            for (var k=1;k<=10;k++){
+                console.log(i +' x '+ k +' = '+ i*k )
+            }console.log('=============')
+            
+        }
+    </script> -->
+    <!-- <script>
+        let numbers = 20;//20 số cần in ra
+        let count = 0;//đếm số lượng SNT0
+        let n = 2;//N tăng dần để kiểm tra
+
+        while (count <= numbers) {
+            var flag = true;
+            for (var i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+
+            //kiểm tra N là số nguyên tố
+            if (flag == true) {
+                document.write(n + " là số nguyên tố <br/>");
+                count++;//0 1 2 3 ...20
+            }
+            n++;
+
+        }
+    </script> -->
+    <!-- 
+    <script>
+        var lanlap=20
+        var lap=0
+        var number=0
+        while (lap<=lanlap){
+            if (number%2==0){
+                lap++
+                    console.log(number+'so chan')
+                }number++
+            }
+    </script> -->
+    <!-- <script>
+    </script>
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            var c = 5 - i;
+            for (var k = 1; k <= c; k++) {
+                document.write("○");
+            }
+            for (let j = 1; j <= i; j++) {
+                document.write("♥");
+            }
+            document.write('<br>')
+        }
+
+        
+        
+    </script> -->
+    <img src="https://james.codegym.vn/pluginfile.php/64959/mod_assign/intro/1.png"
+    alt="Mr. Bob" style="height:120px">
+    
+    <br>
+    <img src="https://james.codegym.vn/pluginfile.php/64959/mod_assign/intro/2.png"
+    alt="Mr. Bob" style="height:100px">
+    <br>
+    <img src="https://james.codegym.vn/pluginfile.php/64959/mod_assign/intro/3.png"
+    alt="Mr. Bob" style="height:100px">
+    <br>
+    <img src="https://james.codegym.vn/pluginfile.php/64959/mod_assign/intro/4.png"
+    alt="Mr. Bob" style="height:100px"> 
+    <br>
+    <img src="https://james.codegym.vn/pluginfile.php/64959/mod_assign/intro/5.png"
+    alt="Mr. Bob" style="height:150">
+    <br>
+    <script>
+        
+        /*
+       i:1
+            j:1
+            c:4
+       i:2
+            j: 1
+            j: 2
+            c:3
+
+       i:3
+             j: 1
+             j: 2
+             j: 3
+             c:2
+
+       i:4
+             j: 1
+             j: 2
+             j: 3
+             j: 4
+             c:1
+    
+
+       i:5
+             j: 1
+             j: 2
+             j: 3
+             j: 4
+             j:5
+             c:0
+             */
+
+        for (var i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("*");
+            }
+            document.write('<br>')
+        }
+        document.write('==============================' + '<br>')
+        /*
+  i: 1
+      j:1
+      j:2
+      j:3
+      j:4
+      j:5 => 6 - i = 5
+      c:0
+  i: 2
+      j:1
+      j:2
+      j:3
+      j:4 => 6 - i = 4
+      c:1
+  i: 3
+      j:1
+      j:2
+      j:3
+      c:2
+  i: 4
+      j:1
+      j:2
+      c:3
+  i: 5
+      j:1
+      c:4
+  */
+
+        for (var i = 1; i <= 5; i++) {
+            var count = 6 - i;
+            //i = 1 => count = 5 => c = 0
+            //i = 2 => count = 4 => c = 1
+            //i = 3 => count = 3 => c = 2
+            //i = 4 => count = 2 => c = 3
+            //i = 5 => count = 1 => c = 4
+            var c = i - 1;
+            for (var k = 1; k <= c; k++) {
+                document.write(" - ");
+            }
+
+
+
+            for (var j = 1; j <= count; j++) {
+                document.write("*");
+            }
+            document.write('<br>')
+        }
+        document.write('==============================' + '<br>')
+
+        /*
+        i :1
+            j:1
+            c:4
+        i :2
+            j:1
+            j:2
+            c:3
+        i :3
+            j:1
+            j:2
+            j:3
+            c:2
+
+        i :4
+             j:1
+             j:2
+             j:3
+             j:4
+             c:1
+
+        i :5
+             j:1
+             j:2
+             j:3
+             j:4
+             j:5
+             c:0
+        */
+        for (var i = 1; i <= 5; i++) {
+            var c = 5 - i
+            for (var k = 1; k <= c; k++) {
+                document.write('..')
+            }
+            for (var j = 1; j <= i; j++) {
+                document.write('*')
+            }
+            document.write('<br>')
+
+        }
+        document.write('==============================' + '<br>')
+
+
+        /*
+              i:1
+                  j:5     
+              i:2
+                  j:4
+              i:3
+                  j:3
+              i:4
+                  j:2
+              i:5
+                  j:1
+      */
+
+        for (var i = 1; i <= 5; i++) {
+            var count = 6 - i
+            for (var k = 1; k <= count; k++) {
+                document.write('*')
+            }
+            document.write('<br>')
+        }
+            document.write('===============' +'<br>')
+        //
+        for (var i = 1; i <= 7; i++) {
+            var count = 21
+            for (var j = 1; j <= 21; j++) {
+                if (i == 1 || i == 7) {
+                    document.write('*')
+                }
+                if (i > 1 && i < 7) {
+                    if (j == 1 || j == 21) {
+                        document.write('*')
+                    } else {
+                        for (var k = 1; k <= 1; k++) {
+                            document.write('..')
+
+                        }
+
+                    }
+                }
+            }
+            document.write('<br>')
+
+        }
+    </script>
+
+    
+
+
+
+
+</html>

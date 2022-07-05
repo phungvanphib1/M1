@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var circle = function(){
+            this.radius = 0.0
+            this.color = ''
+            this.getRadius = function(){
+                return this.radius
+            }
+            this.getArea=function(){
+                return Math.round((this.radius*this.radius*Math.PI)* 100) / 100
+            }
+            this.getchuvi=function(){
+                return Math.round((this.radius*2*Math.PI)* 100) / 100
+            }
+        }
+        var circle1 = new circle
+        circle1.radius = 20
+        circle1.color='red'
+        console.log(circle1.radius)
+        console.log(circle1.color)
+        // console.log(circle1.getRadius())
+        console.log(circle1.getArea())
+        console.log(circle1.getchuvi())
+        
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="txt" value="">
+    <br>
+    <input type="button" value="ADD" onclick=" add() ">
+    <br>
+    <input type="button" value="DISPLAY" onclick=" display() ">
+
+    <script>
+        var elements = [];
+
+        function add() {
+            var txt = document.getElementById('txt').value;
+            elements.push(txt);
+        }
+
+        function display() {
+            document.write(elements);
+        }
+    </script> -->
+
+
+    <script>
+
+        let value = 33;
+        let numbers = [-3, 5, 1, 3, 2, 10];
+        var flag = false;//false
+
+        for (let index = 0; index < numbers.length; index++) {
+            if (numbers[index] == value) {
+                flag = true;//true
+                break;
+            }
+        }
+
+        if (flag == true) {
+            alert(value + ' được tìm thấy')
+        } else {
+            alert(value + ' không được tìm thấy')
+        }
+
+ 
+    </script>
+
+    <!-- <script>
+        let value = 33;
+        let numbers = [-3, 5, 1, 3, 2, 10];
+
+        var max = numbers[0];
+        for (let index = 0; index < numbers.length; index++) {
+            if (numbers[index] > max) {
+                max = numbers[index];
+            }
+        }
+
+        alert(max);
+    </script> -->
+
+    <!-- <script>  //khai bao mang da chieu
+        // cach 1
+        var book1 = ['van', 'su', 'dia']
+        var book2 = ['toan', 'li', 'hoa']
+        var tusach = [book1, book2]
+        console.log(tusach)
+        // cach 2
+        var tusach = [
+            ['van', 'su', 'dia'],
+            ['toan', 'li', 'hoa']
+        ]
+        console.log(tusach)
+    </script> -->
+    <!-- <script> // duyet mang
+        var tusach = [
+            ['van', 'su', 'dia'],
+            ['toan', 'li', 'hoa']
+        ]
+        for (var i = 0; i < tusach.length; i++) {
+            for (var j = 0; j < tusach[i].length; j++) {
+                console.log(tusach[i][j])
+            }
+        }
+
+
+    </script> -->
+    <!-- <script> // thêm phần tử vào mảng
+        var tusach = [
+            ['van', 'su', 'dia'],
+            ['toan', 'li', 'hoa']
+
+        ]   //cach 1
+        tusach[1].push('tienganh')
+        //cach 2
+        tusach[1][3] = 'tieng anh'
+
+        console.log(tusach)
+    </script> -->
+    <!-- <script> // khai báo mảng đã chiều bằng vòng lặp
+        var number = [];
+        for (var i = 0; i < 3; i++) {
+            number[i] = [];
+            for (j = 0; j < 4; j++) {
+                number[i][j] = j
+
+            }
+        }
+        console.log(number)
+    </script> -->
+    <!-- <script> // bảng cuu chương
+        var bang_cuu_chuong = [];
+        for (var i = 2; i <= 9; i++) {
+            //i = 2; - 2 => 0
+            //i = 3: - 2 => 1
+            //...
+            //i = 9: - 2 => 7
+            bang_cuu_chuong[i - 2] = [];//0 1 2 3 4 5 6 7
+            for (var j = 1; j <= 10; j++) {
+                bang_cuu_chuong[i - 2].push(i + ' x ' + j + ' = ' + i * j)
+            }
+        }
+        console.log(bang_cuu_chuong);
+    </script> -->
+
+    <!-- <script> // dich cơ bản
+        var tienganh = ['Hello', 'Bye', 'Love'];
+        var tiengviet = ['Chao', 'Tam Biet', 'Iu'];
+        var tim = prompt('Nhap tu can tra');
+        hih = tienganh.indexOf(tim)
+        alert(tiengviet[hih])
+    </script> -->
+    <!-- <script> // đảo ngược phần tử trong mảng
+        var number = [1, 2, 3, 4, 5, 6, 7]
+        //      0 1 2 3 4 5 6
+        var j = number.length - 1 //6    5
+        for (var k = 0; k < j; k++) { //0=>6     
+            var b = number[k]    //0    1
+            number[k] = number[j]  //0=6  1=5
+            number[j] = b          //6=0  5=1
+            j--                  //6-1  5-1
+        } console.log(number)
+    </script> -->
+    <!-- <script> // tìm phần tử lớn nhất và vị trí của phần tử
+        var number = [1, 6, 4, 11, 9, 4, 3]
+        var max = 0
+        var vitri = 0
+        for (var i = 0; i < number.length; i++) {
+            if (number[i] > max) {
+                max = number[i]
+                vitri = i
+            }
+        } alert('phần tử ' + '(' + max + ')' + ' vị trí số ' + vitri)
+
+    </script> -->
+    <script>
+
+    </script>
+
+</body>
+
+</html>

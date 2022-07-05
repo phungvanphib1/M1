@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+
+<body>
+
+    <a href="#" id="link"> Link </a>
+
+    <form action="">
+        Nhập số thứ nhất:
+        <input type="text" id="so_thu_nhat" value="" class="abc">
+        <br>
+        Nhập số thứ hai:
+        <input type="text" id="so_thu_hai" value="" class="abc">
+        <br>
+        <input type="button" value="Tính" id="tinh" onclick=" khoi_xu_ly() ">
+    </form>
+
+    <script>
+
+
+        function khoi_xu_ly(){
+            //kiem tra bat su kien duoc chua
+            //alert(123);
+
+            //lay gia tri trong o input
+            var a = document.getElementById('so_thu_nhat').value; //string
+
+            //lay gia tri trong o input
+            var b = document.getElementById('so_thu_hai').value; //string
+
+            //chuyen doi kieu du lieu
+            var c = parseInt(a)
+            var d= parseInt(b)
+
+            //tu lam
+            var ketqua = c + d; 
+            alert(ketqua);
+        }
+    </script>
+</body>
+</html>

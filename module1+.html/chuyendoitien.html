@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><b>tien</b></td>
+                <td><b>vao</b></td>
+                <td><b>ra</b></td>
+
+            </tr><br>
+            <tr>
+                <td>
+                    <input id="nhap1" type="text">
+                </td>
+                <td>
+                    <select id="vao1">
+                        <option value="vnd">vnd</option>
+                        <option value="usd">usd</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="ra1">
+                        <option value="vnd">vnd</option>
+                        <option value="usd">usd</option>
+                    </select>
+                </td>
+                <td>
+                    <input onclick="chuyentien()" type="button" value="tinh">
+                </td><br>
+            </tr>
+            <tr>
+                <td id="ketqua"> </td>
+            </tr>
+            <script>
+                function chuyentien() {
+                    var nhap1 = document.getElementById('nhap1').value;
+                    var vao1 = document.getElementById("vao1").value;
+                    var ra1 = document.getElementById('ra1').value;
+                    var ketqua;
+
+                    if (vao1 == "usd" && ra1 == "vnd") { ketqua = "ketqua:" + nhap1 * 23000 + 'vnd' }
+                    if (vao1 == "vnd" && ra1 == "vnd") { ketqua = "ketqua:" + nhap1 + 'vnd' }
+                    if (vao1 == "vnd" && ra1 == "usd") { ketqua = "ketqua: " + nhap1 / 23000 + 'usd' }
+                    if (vao1 == "usd" && ra1 == "usd") { ketqua = "ketqua:" + nhap1 + "usd" }
+                    document.getElementById('ketqua').innerHTML = ketqua;
+                }
+            </script>
+
+
+        </table>
+    </form>
+
+</body>
+
+</html>

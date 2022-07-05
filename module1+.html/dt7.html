@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dienThoai = function (pin) {
+            this.pin = pin;
+            var on = true
+            var off = false
+            this.tinhtrang = function (tt) {
+
+                if (tt == on && pin >= 1) {
+                    console.log('On')
+
+                    this.tinhtangdt = function () {
+                        return 'điện thoại đang bật'
+                    }
+                    this.soanTin = function () { //iphone
+                        console.log(this.pin-- + '%')
+                            (this.soanTin = '')
+                    }
+                    this.guiTin = function () { //iphone
+                        console.log(this.pin-- + '%')
+                        return 'gửi tin: ' + (this.guiTin = this.soanTin)
+                    }
+                    this.nhanTB = function () { //nokia
+                        console.log(' nokia Có tin nhắn')
+
+                    }
+                    this.nhanTin = function () { //nokia
+                        console.log(this.pin-- + '%')
+                        console.log('nokia◘1 tin nhắn')
+                        return 'nokia◘ đã nhận 1 tin nhắn: ' + (this.nhanTin = (ip.guiTin))
+                    }
+                    this.luuTruTindangViet = function () { //iphone
+                        console.log(this.pin-- + '%')
+                        return 'tin đang viết: ' + (this.luuTruTindangViet = this.soanTin)
+                    }
+                    this.luuTruDen = function () { //nokia
+                        console.log(this.pin-- + '%')
+                        return 'nokia◘tin nhắn lưu trử đến:' + (this.luuTruDen = this.nhanTin)
+                    }
+                    this.luuTindaGui = function () { //iphone
+                        console.log(this.pin-- + '%')
+                        return 'Kho lưu tin đã gửi:' + (this.luuTindaGui = this.guiTin)
+                    }
+                    this.xemHopThuDen = function () { //nokia
+                        console.log(this.pin-- + '%')
+                        return 'nokia◘Hộp Thư đến: ' + (this.xemHopThuDen = this.luuTruDen)
+                    }
+                    this.xemTindaGui = function () { //iphone
+                        console.log(this.pin-- + '%')
+                        return 'Xem tin đã gửi: ' + (this.xemTindaGui = this.guiTin)
+                    }
+                    this.xacpin = function () {
+
+                        if (this.pin < 100) {
+                            console.log('bắt đầu xạc')
+                            for (i = this.pin; i <= 100; i++) {
+                                if (i == 50) {
+                                } console.log(i + '%')
+                            } console.log('đã xạc đầy')
+                        } else {
+                            console.log('pin đầy rồi xạc quần')
+                        }
+                    }
+
+
+                } else {
+                    console.log('off')
+                }
+
+            }
+
+
+        }
+        var ip = new dienThoai(100)
+        var nk = new dienThoai(90)
+        console.log(ip.pin)
+        ip.tinhtrang(true)
+        console.log(ip.tinhtangdt())
+        ip.soanTin = 'Hê lô bấy bề'
+        console.log(ip.guiTin())
+
+        nk.tinhtrang(true)
+        nk.nhanTB() //nokia
+        console.log(nk.nhanTin())
+        console.log(nk.luuTruDen())
+        console.log(nk.xemHopThuDen())
+
+        console.log('------------')
+
+        console.log(ip.luuTruTindangViet())
+        console.log(ip.luuTindaGui())
+        console.log(ip.xemTindaGui())
+
+        console.log('------------')
+
+        // console.log(ip.pin)
+        ip.tinhtrang(true)
+        ip.soanTin = 'bấy bề có khỏe không'
+        console.log(ip.guiTin())
+        ip.xacpin() 
+        nk.tinhtrang(true)
+        nk.nhanTB()
+        console.log(nk.nhanTin())
+        nk.xacpin()
+        // console.log(ip.luuTruTindangViet())
+        // console.log(ip.luuTindaGui())
+        // console.log(ip.xemTindaGui())
+        // console.log(ip.guiTin())
+        // ip.xacpin()
+
+        // console.log('------------')
+        // console.log(nk.pin)
+        // nk.tinhtrang(true)
+        // nk.soanTin = 'Hê lô bấy bề'
+        // nk.guiTin()
+        // console.log(nk.tinhtangdt())
+        // nk.nhanTin()
+        // console.log(nk.luuTruDen())
+        // console.log(nk.xemHopThuDen())
+        // nk.xacpin()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

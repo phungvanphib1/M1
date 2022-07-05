@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập hàm</title>
+</head>
+
+<body>
+    <script>
+        //1
+        function lon() {
+            console.log('xin chào')
+        }
+        lon()
+
+        //2
+        function so(a) {
+            return a + 1
+        }
+        console.log(so(2) + 'số bạn nhập đã được tăng 1')
+
+        //3
+        function sosanh(a, b) {
+            if (a > b) {
+                console.log(a + ' 5lớn hơn ' + b)
+            } else {
+                var c = a + b
+                console.log(c)
+            }
+        }
+        // var a=Number(prompt())
+        // var b=Number(prompt())
+        sosanh(1, 1)
+
+        //4
+        function addNumbers() {
+            fi = 4
+            se = 8
+            return resula = fi + se
+        }
+        resula = 0
+        resula = addNumbers
+        console.log(addNumbers())
+
+        //5
+        let bok1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+        let bok2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+        function tim(star) {
+            var index_bok1
+            for (var i = 0; i < bok1.length; i++) {
+                if (star == bok1[i]) {
+                    index_bok1 = i
+                    break
+                } else {
+                    return 'không tìm thấy sao'
+                }
+            }
+            return bok2[i]
+        }
+        // let star = prompt("Nhập vào ngôi sao: ")
+        console.log(tim('Polaris'));
+
+        //6
+        function binhphuong(a) {
+            return 'bình phương của A là ' + a * a
+        }
+        // var a = prompt(' điền số')   
+        console.log(binhphuong(1))
+
+        //7
+        function dientich(d) {       //s=(d*2)/4*3.14
+            return Math.round((d * d / 4 * Math.PI) * 100) / 100;
+        }
+        function chuvi(d) {          //C=d*3.14
+            return Math.round((c = d * Math.PI) * 100) / 100
+        }
+        // var d = prompt('nhập đường kính')
+
+        console.log(dientich(2))
+        console.log(chuvi(2))
+
+        //8
+        var c=1;
+        function giaithua(a){
+            for (i=1;i<=a;i++){
+               c=c*i
+            }
+            console.log('Giai thừa của a '+ c)
+
+        }
+        // var a= prompt('nhập a')
+        giaithua(5)
+
+        //9
+        function a(){
+            
+        }
+        
+
+
+
+    </script>
+
+
+</body>
+
+</html>
