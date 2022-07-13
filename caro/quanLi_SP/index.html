@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí sản phẩm</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div>
+        <label for="">Tên sản Phẩm</label>
+        <input type="text" id="sanpham">
+    </div>
+    <div>
+        <label for="">Mô Tả Sản Phẩm</label>
+        <input type="text" id="mota" size="70px">
+    </div>
+    <tr>
+     
+            <span>
+                <label for="">Số Lướng sp</label>
+                <input type="number" id="sl">
+            </span>
+        
+            <samp>
+                <label for="" >Giá</label>
+                <input type="number" id="gia">
+            </samp>
+        
+    </tr>
+    
+    <div>
+        <button onclick="add()">Thêm sản phẩm</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Mô Tả</th>
+                <th>Số lượng</th>
+                <th>Giá/sp</th>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        var mang=[]
+        function add(){
+            var item_sanpham=document.getElementById("sanpham").value
+            var item_mota=document.getElementById("mota").value
+            var item_sl=document.getElementById("sl").value
+            var item_gia=document.getElementById("gia").value
+            var item ={
+                sanpham :item_sanpham,
+                mota :item_mota,
+                sl :item_sl,
+                gia :item_gia
+            }
+            mang.push(item)
+        }
+
+    </script>
+</body>
+</html>

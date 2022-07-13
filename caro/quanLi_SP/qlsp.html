@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+        <style>
+            th {
+                background-color: aqua;
+            }
+
+            td {
+                background-color: rgba(9, 236, 20, 0.856);
+            }
+
+            #b {
+                background-color: rgb(216, 178, 190);
+            }
+
+            #c {
+                background-color: rgb(216, 178, 190);
+            }
+            h1 {
+                text-align: center;
+                color: rgb(255, 72, 0);
+            }
+            html{
+                background-color: rgb(193, 190, 240);
+            }
+            body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color:  rgb(78, 68, 68);
+    }
+    
+    .topnav a {
+      background-color: rgb(78, 68, 68);
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover, #csmota:hover,
+        #cst:hover,
+        #csmt:hover, #addd:hover,
+        #timkiem1:hover,
+        #hienthi:hover,
+        #reset1:hover,
+        #delete1:hover{
+      background-color: rgb(204, 150, 255);
+      color: rgb(255, 0, 0);
+    }
+    .topnav-right {
+      float: right;
+    }
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav">
+            <span class="top1">  
+              <a class="active" onclick="ht_sp()">Trang Chủ</a>
+            </span>
+            
+              <a onclick="add01()" >Quản Lý Sản phẩm</a>
+              <div class="topnav-right" style="padding-left:16px">
+                <a href="./dangnhap.html" >Đăng Nhập</a>
+              </div>
+          </div>
+           
+            </div>
+        <h1>Quản Lý Sản phẩm</h1>
+
+        <form action="javascript:void(0);" method="POST" onsubmit="listPhone.add()">
+            <input type="text" id="add" placeholder="Thêm sản phẩm">
+            <input type="submit" value="Thêm" id="b"><br>
+
+            <textarea id="add1" cols="120" rows="7" placeholder = "Thêm mô tả"></textarea>
+            
+        </form>
+
+        <br><br>
+
+        <table border="1px" cellpadding="0" cellspacing="0" width="900" style="text-align: center; ">
+            <tr>
+
+                <th style="padding: 10px 0;">Tổng các sản phẩm</th>
+                <th>Mô tả sản phẩm</th>
+                <th colspan="3" style="padding: 10px 0;">
+                    <p id="soluong"></p>
+                </th>
+            </tr>
+            <tbody id="product"></tbody>
+        </table>
+
+        <br><br>
+
+       
+
+
+        <script>
+            let Phone = function () {
+                this.listPhone = []
+                this.mota = []
+                this.product = document.getElementById("product")
+
+                this.count = function (data) {
+                    let soluong = document.getElementById("soluong")
+                    if (data != null) {
+                        if (data > 0) {
+                            soluong.innerHTML = "Có " + data + " sản phẩm"
+                        } else {
+                            soluong.innerHTML = "Không có sản phẩm"
+                        }
+                    }
+                }
+
+                this.display = function () {
+                    let data = ""
+                    if (this.listPhone.length > 0) {
+                        for (let i = 0; i < this.listPhone.length; i++) {
+                            data += "<tr>"
+
+                            // data += "<td style='padding: 10px 0; font-size: 20px;font-weight: bold ;text-transform:uppercase;color: red'>" + this.listPhone[i] + "</td>"
+                            data += "<td style='padding: 10px 0;'>"+this.listPhone[i]+"</td>"
+                            data += "<td style='padding: 10px 0;'>"+this.mota[i]+"</td>"
+                            data += "<td style='padding: 10px 0;'><button onclick='listPhone.edit(" + i + ")'>Sửa</button></td>"
+                            data += "<td style='padding: 10px 0;'><button onclick='listPhone.delete(" + i + ")'>Xoá</button>(" + (i + 1) + ")</td>"
+                            data += "<td  style='padding: 10px 0;'><form action='javascript:void(0);' method='POST' id='saveEdit'><input type='submit' value='Lưu' /></form></td>"
+         
+        
+
+                            data += "</tr>"
+                        }
+                    }
+                    this.count(this.listPhone.length)
+                    return this.product.innerHTML = data
+                }
+
+                this.add = function () {
+                    let addProduct = document.getElementById("add").value
+                    let mota =document.getElementById("add1").value
+                    if (addProduct != '') {
+                        this.listPhone.push(addProduct.trim())
+                        this.mota.push(mota.trim())
+                        this.display()
+                        document.getElementById("add").value = ""
+                        document.getElementById("add1").value = ""
+                    }
+
+                }
+
+                this.edit = function (id) {
+                    let editProduct = document.getElementById("add")
+                    let mota =document.getElementById("add1")
+
+                    editProduct.value = this.listPhone[id]
+                    mota.value = this.mota[id]
+                    self = this;
+                    document.getElementById("saveEdit").onsubmit = function () {
+                        let produc = editProduct.value
+                        let mota1 = mota.value
+                        self.listPhone.splice(id, 1, produc)
+                        self.mota.splice(id, 1, mota1)
+                        self.display()
+                        editProduct.value = ""
+                        mota.value = ""
+
+                    }
+                }
+
+                this.delete = function (id) {
+                    this.listPhone.splice(id, 1);
+                    this.display()
+                }
+            }
+
+            let listPhone = new Phone()
+            listPhone.display()
+            mota.display()
+        </script>
+    </body>
+
+    </html>
+
+
+
+</body>
+
+</html>

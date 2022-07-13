@@ -1,0 +1,68 @@
+ #a {
+     background-size: cover;
+     background: url(https://salt.tikicdn.com/ts/tmp/60/c4/39/53183bb9f55c14217d5e3e873072d10a.jpg)
+ }
+
+ #add {
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+
+     background-image: linear-gradient(to right bottom, #ed1c24, #363636);
+ }
+
+ #add:hover {
+     background-image: linear-gradient(to right bottom, #12b0e9, #627df3);
+
+ }
+
+ #edit {
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+
+     background-image: linear-gradient(to right bottom, #ed1c24, #363636);
+ }
+
+ #edit:hover {
+     background-image: linear-gradient(to right bottom, #12b0e9, #627df3);
+
+ }
+ #now{
+    color: #d31e34;
+ }
+ button{
+    border: none;
+    text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+ }
+
+ button:hover {
+     background-image: linear-gradient(to right bottom, #12b0e9, #627df3);
+ }
+
+ #id1 {
+     font-size: 35px;
+     background-color: rgba(100, 148, 237, 0.115);
+     color: #d31e34;
+
+ }
+
+ /* h1 {
+     text-align: center;
+     font-size: 50px;
+     background-color: rgba(135, 206, 250, 0.112);
+     margin: 0;
+ } */
+
+ th,
+ td {
+     text-align: center;
+ }

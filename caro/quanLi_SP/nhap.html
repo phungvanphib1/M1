@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <h1> QUẢN LÝ HỌC VIÊN </h1>
+    <table class="table">
+        <tr id="id1">
+            <th colspan="2">Trung Tâm Chỉnh s</th>
+        </tr>
+    
+        <tr>
+            <th>ID</th>
+            <td><input type="number" id="id"></td>
+    
+        </tr>
+        <tr>
+            <th>Họ tên</th>
+            <td><input type="text" id="fullname"></td>
+        </tr>
+        <tr>
+            <th>Ngày sinh</th>
+            <td><input type="text" id="date"></td>
+        </tr>
+        <tr>
+            <th>Giới tính</th>
+            <td><input type="text" id="gender"></td>
+        </tr>
+        <tr>
+            <th>Lớp</th>
+            <td><input type="text" id="grade"></td>
+        </tr>
+        <tr>
+            <th>Ảnh sản phẩm</th>
+            <td><input type="text" id="img"></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <button style="background-color: limegreen" id="add" onclick="addStudent()">Thêm Sản phẩm</button>
+                <button style="background-color: gold" id="edit" onclick="updateStudent()">Sửa</button>
+            </td>
+        </tr>
+    </table>
+
+<table class="table">
+    <tr>
+        <th style="font-size: 40px" colspan="7">Danh sách học viên</th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Lớp</th>
+        <th>Ảnh</th>
+        <th>Tùy chọn</th>
+
+    </tr>
+    <tbody id="list-student">
+    </tbody>
+
+
+<script>
+    class StudentManagement {
+    constructor(arr) {
+        this.students = arr;
+    }
+    showList() {
+        let table = '';
+        for (let i = 0; i < this.students.length; i++) {
+
+
+            table += '<tr>';
+            table += '<td>';
+            table += this.students[i].id;
+            table += '</td>';
+
+            table += '<td>';
+            table += this.students[i].fullname;
+            table += '</td>';
+
+            table += '<td>';
+            table += this.students[i].date;
+            table += '</td>';
+
+            table += '<td>';
+            table += this.students[i].gender;
+            table += '</td>';
+
+            table += '<td>';
+            table += this.students[i].grade;
+            table += '</td>';
+
+            table += '<td>';
+            table += '<img width="100px" height="100px" src=" '+this.students[i].img+'">';
+            table += '</td>';
+
+            table += '<td>' +
+                '<button style="background-color: red; color: white "  type="button" onclick="deleteStudent('+i+')">Delete</button> ' +
+                ' <button  style="background-color: orange ; color: white" type="button" onclick="editStudent('+i+')">Edit</button>' +
+                '</td>';
+
+            table += '</tr>';
+        }
+        document.getElementById('list-student').innerHTML = table;
+    }
+
+    addStudent(student) {
+        this.students.push(student);
+    }
+
+    delete(id) {
+        this.students.splice(id, 1);
+    }
+
+    findStudentById(id){
+        return this.students[id];
+    }
+
+    edit(student,id, fullname, date, gender, grade, img){
+        student.edit(id, fullname, date,gender, grade, img);
+    }
+
+}
+class Student {
+    constructor (id, fullname, date, gender, grade, img) {
+        this.id= id;
+        this.fullname= fullname;
+        this.date= date;
+        this.gender= gender;
+        this.grade= grade;
+        this.img = img;
+    }
+    getID() {
+        return this.id;
+    }
+    getFullname() {
+        return this.fullname;
+    }
+    getDate() {
+        return this.date;
+    }
+    getGender(){
+        return this.gender;
+    }
+    getGrade() {
+        return this.grade;
+
+    }
+    getImg() {
+        return this.img;
+    }
+    setID(id) {
+        this.id=id;
+    }
+    setFullname(fullname) {
+        this.fullname=fullname;
+    }
+    setDate(date) {
+        this.date=date;
+    }
+    setGender(gender){
+        this.gender=gender;
+    }
+    setGrade(grade) {
+        this.grade=grade;
+    }
+    setImg(img){
+        this.img=img;
+    }
+
+    edit(id, fullname, date,gender, grade, img){
+        this.id = id;
+        this.fullname = fullname;
+        this.date = date;
+        this.gender = gender;
+        this.grade = grade;
+        this.img = img
+    }
+}
+let student = new Student('1', "Tạ Thị Thùy", '07/02/2002', 'Nữ','USSH112','https://toplist.vn/images/800px/tiem-chup-anh-the-lay-ngay-dep-nhat-o-hue-chu-de-da-duoc-nhan-cua-kieu-nguyen-317636.jpg' );
+let student1 = new Student('2','Đàm Kiều Trinh','05/02/2002','Nữ', 'USSK113','https://static2.yan.vn/YanNews/202005/202005220338210409-bee6f138-0608-4d56-bce3-27148a855654.png');
+let student2 = new Student('3','Bùi Thị Ánh','22/01/2002','Nữ','USSL132','https://znews-photo.zadn.vn/w660/Uploaded/lce_jwqqc/2019_05_30/61103071_2361422507447925_6222318223514140672_n_1.jpg');
+let arr =[student, student1, student2];
+let manage = new StudentManagement(arr);
+
+function addStudent(){
+    let id = document.getElementById('id').value;
+    let name = document.getElementById('fullname').value;
+    let date = document.getElementById('date').value;
+    let gender = document.getElementById('gender').value;
+    let grade = document.getElementById('grade').value;
+    let img = document.getElementById('img').value;
+
+    let student = new Student(id,name,date,gender,grade,img);
+    manage.addStudent(student);
+    manage.showList();
+    clear();
+}
+
+function clear(){
+    document.getElementById('id').value = '';
+    document.getElementById('fullname').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('gender').value = '';
+    document.getElementById('grade').value = '';
+    document.getElementById('img').value= '';
+}
+
+function deleteStudent(id) {
+        manage.delete(id);
+        manage.showList();
+}
+
+let studentId = 0;
+function editStudent(id){
+    let student = manage.findStudentById(id);
+    document.getElementById('id').value = student.id;
+    document.getElementById('fullname').value = student.fullname;
+    document.getElementById('date').value = student.date;
+    document.getElementById('gender').value = student.gender;
+    document.getElementById('grade').value = student.grade;
+    document.getElementById('img').value = student.img;
+
+    studentId = id;
+}
+
+function updateStudent(){
+    let id = document.getElementById('id').value;
+    let name = document.getElementById('fullname').value;
+    let date = document.getElementById('date').value;
+    let gender = document.getElementById('gender').value;
+    let grade = document.getElementById('grade').value;
+    let img = document.getElementById('img').value;
+
+    let student = manage.findStudentById(studentId);
+    manage.edit(student,id,name,date,gender,grade, img);
+    manage.showList();
+    clear();
+}
+manage.showList();
+</script>
+<!-- <script src="js/StudentManagement.js"></script>
+<script src="js/Student.js"></script>
+<script src="js/main.js"></script> -->
+<link rel="stylesheet" href="ql.css">
+</body>
+</html>
+

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now QuảngTrị</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="ql.css">
+</head>
+<img src="./anh/291706273_741757607160115_7748601987248837028_n.png" id="logo">
+
+<body>
+    <!-- <h1> QUẢN LÝ SẢN PHẨM </h1> -->
+    <table class="table">
+        <tr id="id1">
+            <th colspan="2">Trung Tâm Chỉnh Sửa</th>
+        </tr>
+
+        <tr>
+            <th>ID</th>
+            <td><input type="number" placeholder="Nhập ID" id="id"></td>
+
+        </tr>
+        <tr>
+            <th>Tên Sản Phẩm</th>
+            <td><input type="text" placeholder="Nhập Tên Sản Phẩm" id="ten"></td>
+        </tr>
+        <tr>
+            <th>Mô Tả Sản Phẩm</th>
+            <!-- <td><input type="text" id="mota"></td> -->
+            <td><textarea type="text" cols="35" rows="3" placeholder="Thêm mô tả" id="mota"></textarea></td>
+        </tr>
+        <tr>
+            <th>Giá</th>
+            <td><input type="number" placeholder="Giá Của Sản Phẩm" id="gia"></td>
+        </tr>
+        <tr>
+            <th>Ảnh sản phẩm</th>
+            <td><input type="text" placeholder="Địa chỉ ảnh" id="img"></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <button style="background-color: rgba(185, 41, 41, 0.522)" id="add" onclick="addSp()">Thêm Sản
+                    phẩm</button>
+                <button style="background-color: rgb(118, 106, 34)" id="edit" onclick="suaSp()">Sửa</button>
+            </td>
+        </tr>
+    </table>
+
+    <table id="a" class="table">
+        <tr>
+            <th id="now" style="font-size: 40px" colspan="7">Now SaiGon۹ᵘᵃⁿᵍᵀʳⁱ</th>
+            <th><img src="./anh/292079910_372735184971494_3203660369885475196_n.png" id="logo"></th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Mô Tả Sản Phẩm</th>
+            <th>Giá/Sp</th>
+            <th>Ảnh</th>
+            <th>Tùy chọn</th>
+
+        </tr>
+        <tbody id="dsSp">
+        </tbody>
+
+
+        <script>
+            class quanlisp {
+                constructor(arr) {
+                    this.ao = arr;
+                }
+                danhsach() {
+                    var table = '';
+                    for (var i = 0; i < this.ao.length; i++) {
+
+
+                        table += '<tr>';
+                        table += '<td>';
+                        table += this.ao[i].id;
+                        table += '</td>';
+
+                        table += '<td>';
+                        table += this.ao[i].ten;
+                        table += '</td>';
+
+                        table += '<td>';
+                        table += this.ao[i].mota;
+                        table += '</td>';
+
+                        table += '<td>';
+                        table += this.ao[i].gia;
+                        table += '</td>';
+
+                        table += '<td>';
+                        table += '<img width="100px" height="100px" src=" ' + this.ao[i].img + '">';
+                        table += '</td>';
+
+                        table += '<td>' +
+                            '<button style="background-color: rgba(185, 41, 41, 0.522); color: white; "  type="button" onclick="deleteSp(' + i + ')">Xóa</button> ' +
+                            ' <button  style="background-color: rgb(118, 106, 34); color: white; " type="button" onclick="editSp(' + i + ')">Sửa</button>' +
+                            '</td>';
+
+                        table += '</tr>';
+                    }
+                    document.getElementById('dsSp').innerHTML = table;
+                }
+
+                addSp(ao1) {
+                    this.ao.push(ao1);
+                }
+
+                delete(id) {
+                    this.ao.splice(id, 1);
+                }
+
+                idSp(id) {
+                    return this.ao[id];
+                }
+
+                edit(ao1, id, ten, mota, gia, img) {
+                    ao1.edit(id, ten, mota, gia, img);
+                }
+
+            }
+            class Sanpham1 {
+                constructor(id, ten, mota, gia, img) {
+                    this.id = id;
+                    this.ten = ten;
+                    this.mota = mota;
+                    this.gia = gia;
+                    this.img = img;
+                }
+                getID() {
+                    return this.id;
+                }
+                getTen() {
+                    return this.Ten;
+                }
+                getMota() {
+                    return this.mota;
+                }
+                getGia() {
+                    return this.gia;
+                }
+                getImg() {
+                    return this.img;
+                }
+                setID(id) {
+                    this.id = id;
+                }
+                setTen(ten) {
+                    this.ten = ten;
+                }
+                setMota(mota) {
+                    this.mota = mota;
+                }
+                setGia(gia) {
+                    this.gia = gia;
+                }
+                setImg(img) {
+                    this.img = img;
+                }
+
+                edit(id, ten, mota, gia, img) {
+                    this.id = id;
+                    this.ten = ten;
+                    this.mota = mota;
+                    this.gia = gia;
+                    this.img = img
+                }
+            }
+            let ao1 = new Sanpham1('001', 'TEDDY MARCUS TEE - CREAM', 'Made in Vietnam fullsize', '350.000', 'https://bizweb.dktcdn.net/100/318/614/products/img-1169-1-compressed.jpg?v=1656325470137');
+            let ao2 = new Sanpham1('002', 'TRANSFORMATION LOGO TEE - BLACK', 'Made in Vietnam fullsize M/l/xl', '450.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/14-2.jpg?v=1651246611000');
+            let ao3 = new Sanpham1('003', 'NOWSAIGON BRUSH TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '800.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/3-copy-2.jpg?v=1653109448000');
+            let arr = [ao1, ao2, ao3];
+            let quanli = new quanlisp(arr);
+
+            function addSp() {
+                let id = document.getElementById('id').value;
+                let ten = document.getElementById('ten').value;
+                let mota = document.getElementById('mota').value;
+                let gia = document.getElementById('gia').value;
+                let img = document.getElementById('img').value;
+
+                let sanpham1 = new Sanpham1(id, ten, mota, gia, img);
+                quanli.addSp(sanpham1);
+                quanli.danhsach();
+                clear();
+            }
+
+            function clear() {
+                document.getElementById('id').value = '';
+                document.getElementById('ten').value = '';
+                document.getElementById('mota').value = '';
+                document.getElementById('gia').value = '';
+                document.getElementById('img').value = '';
+            }
+
+            function deleteSp(id) {
+                quanli.delete(id);
+                quanli.danhsach();
+            }
+
+            let idsp = 0;
+            function editSp(id) {
+                let sanpham1 = quanli.idSp(id);
+                document.getElementById('id').value = sanpham1.id;
+                document.getElementById('ten').value = sanpham1.ten;
+                document.getElementById('mota').value = sanpham1.mota;
+                document.getElementById('gia').value = sanpham1.gia;
+                document.getElementById('img').value = sanpham1.img;
+
+                idsp = id;
+            }
+
+            function suaSp() {
+                let id = document.getElementById('id').value;
+                let ten = document.getElementById('ten').value;
+                let mota = document.getElementById('mota').value;
+                let gia = document.getElementById('gia').value;
+                let img = document.getElementById('img').value;
+
+                let sanpham1 = quanli.idSp(idsp);
+                quanli.edit(sanpham1, id, ten, mota, gia, img);
+                quanli.danhsach();
+                clear();
+            }
+            quanli.danhsach();
+        </script>
+</body>
+
+</html>
