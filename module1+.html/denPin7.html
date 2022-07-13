@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Phi = function (p) {
+            this.pin = p
+            this.battery = function () {
+                return 'năng lương ' + (this.battery = this.pin) + '%'
+            }
+            this.flash = function (tt) {
+                this.trangthai = tt
+                this.battery = p
+                this.denpin = function () {
+                    if (this.trangthai == true && this.battery >= 1) {
+                        console.log('đèm pin on')
+                        this.batden = function () {
+                            console.log('pin:'+this.battery-- + '%')
+                            return this.batden = 'Đèn Đang chiếu sáng'
+                        }
+                        this.anhsang = function (tang) {
+                            var as = 5
+                            if (as == tang) {
+                                console.log('ánh sáng tăng mức :' + tang)
+                                return ('Pin hiện tại:'+(this.battery - 5) + '%')
+                            } else {
+                                console.log('ánh sáng tăng mức :' + tang)
+                                console.log('giảm ánh sáng nếu không muốn  pin tụt nhanh!')
+                                return ('Pin hiện tại:' + (this.battery - tang) + '%')
+
+                            }
+                        }
+                        this.tatden = function () {
+                            return this.tatden = 'Đèn tắt sáng'
+                        }
+
+                    } else {
+                        console.log('đèn pin Off')
+                    }
+                }
+            }
+        }
+        var p = new Phi(100)
+        console.log(p.battery())
+        p.flash(true)
+        p.denpin()
+        alert(p.batden())
+        console.log(p.anhsang(5))
+        alert(p.tatden())
+        p.flash(false)
+        p.denpin()
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

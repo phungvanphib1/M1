@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function insertNumberToArray(a,x,index){
+            for(var i=0;i<a.length; i++){
+                if (index <0 || index > a.length){
+                    return a;
+                }else {
+                    a[index]=x;
+                    return a;
+                }
+            }
+        }
+        var a = [1,7,3,4,5]
+        console.log(insertNumberToArray(a,6,3));
+    </script>
+</body>
+</html>
