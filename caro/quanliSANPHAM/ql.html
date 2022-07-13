@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="ql.css">
 </head>
 <img src="./anh/291706273_741757607160115_7748601987248837028_n.png" id="logo">
-
 <body>
     <!-- <h1> QUẢN LÝ SẢN PHẨM </h1> -->
     <table class="table">
@@ -50,7 +48,6 @@
             </td>
         </tr>
     </table>
-
     <table id="a" class="table">
         <tr>
             <th id="now" style="font-size: 40px" colspan="7">Now SaiGon۹ᵘᵃⁿᵍᵀʳⁱ</th>
@@ -68,7 +65,6 @@
         <tbody id="dsSp">
         </tbody>
 
-
         <script>
             class quanlisp {
                 constructor(arr) {
@@ -77,7 +73,6 @@
                 danhsach() {
                     var table = '';
                     for (var i = 0; i < this.ao.length; i++) {
-
 
                         table += '<tr>';
                         table += '<td>';
@@ -174,25 +169,22 @@
                     this.img = img
                 }
             }
-            let ao1 = new Sanpham1('001', 'TEDDY MARCUS TEE - CREAM', 'Made in Vietnam fullsize', '350.000', 'https://bizweb.dktcdn.net/100/318/614/products/img-1169-1-compressed.jpg?v=1656325470137');
-            let ao2 = new Sanpham1('002', 'TRANSFORMATION LOGO TEE - BLACK', 'Made in Vietnam fullsize M/l/xl', '450.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/14-2.jpg?v=1651246611000');
-            let ao3 = new Sanpham1('003', 'NOWSAIGON BRUSH TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '800.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/3-copy-2.jpg?v=1653109448000');
-            let arr = [ao1, ao2, ao3];
-            let quanli = new quanlisp(arr);
-
+            var ao1 = new Sanpham1('001', 'TEDDY MARCUS TEE - CREAM', 'Made in Vietnam fullsize', '350.000', 'https://bizweb.dktcdn.net/100/318/614/products/img-1169-1-compressed.jpg?v=1656325470137');
+            var ao2 = new Sanpham1('002', 'TRANSFORMATION LOGO TEE - BLACK', 'Made in Vietnam fullsize M/l/xl', '450.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/14-2.jpg?v=1651246611000');
+            var ao3 = new Sanpham1('003', 'NOWSAIGON BRUSH TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '800.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/3-copy-2.jpg?v=1653109448000');
+            var arr = [ao1, ao2, ao3];
+            var quanli = new quanlisp(arr);
             function addSp() {
-                let id = document.getElementById('id').value;
-                let ten = document.getElementById('ten').value;
-                let mota = document.getElementById('mota').value;
-                let gia = document.getElementById('gia').value;
-                let img = document.getElementById('img').value;
-
-                let sanpham1 = new Sanpham1(id, ten, mota, gia, img);
+                var id = document.getElementById('id').value;
+                var ten = document.getElementById('ten').value;
+                var mota = document.getElementById('mota').value;
+                var gia = document.getElementById('gia').value;
+                var img = document.getElementById('img').value;
+                var sanpham1 = new Sanpham1(id, ten, mota, gia, img);
                 quanli.addSp(sanpham1);
                 quanli.danhsach();
                 clear();
             }
-
             function clear() {
                 document.getElementById('id').value = '';
                 document.getElementById('ten').value = '';
@@ -200,15 +192,13 @@
                 document.getElementById('gia').value = '';
                 document.getElementById('img').value = '';
             }
-
             function deleteSp(id) {
                 quanli.delete(id);
                 quanli.danhsach();
             }
-
-            let idsp = 0;
+            var idsp = 0;
             function editSp(id) {
-                let sanpham1 = quanli.idSp(id);
+                var sanpham1 = quanli.idSp(id);
                 document.getElementById('id').value = sanpham1.id;
                 document.getElementById('ten').value = sanpham1.ten;
                 document.getElementById('mota').value = sanpham1.mota;
@@ -217,15 +207,14 @@
 
                 idsp = id;
             }
-
             function suaSp() {
-                let id = document.getElementById('id').value;
-                let ten = document.getElementById('ten').value;
-                let mota = document.getElementById('mota').value;
-                let gia = document.getElementById('gia').value;
-                let img = document.getElementById('img').value;
+                var id = document.getElementById('id').value;
+                var ten = document.getElementById('ten').value;
+                var mota = document.getElementById('mota').value;
+                var gia = document.getElementById('gia').value;
+                var img = document.getElementById('img').value;
 
-                let sanpham1 = quanli.idSp(idsp);
+                var sanpham1 = quanli.idSp(idsp);
                 quanli.edit(sanpham1, id, ten, mota, gia, img);
                 quanli.danhsach();
                 clear();
@@ -233,5 +222,4 @@
             quanli.danhsach();
         </script>
 </body>
-
 </html>
