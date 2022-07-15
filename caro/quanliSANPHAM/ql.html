@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="ql.css">
+    <a href= " https://hocban.vn/huong-dan-cach-chen-link-lien-ket-trong-html " ></a>
 </head>
-<img src="./anh/291706273_741757607160115_7748601987248837028_n.png" id="logo">
+<button><img id="logo" src="./anh/291706273_741757607160115_7748601987248837028_n.png" onclick="reloat()"></button>
 <body>
     <!-- <h1> QUẢN LÝ SẢN PHẨM </h1> -->
     <table class="table">
         <tr id="id1">
-            <th colspan="2">Trung Tâm Chỉnh Sửa</th>
+            <th >Trung Tâm Chỉnh Sửa</th>
+            <!-- <div class="nut-bam"><a href="https://www.facebook.com/phi6623/">Trung Tâm Trợ Giúp</a></div> -->
+            <th><div id="trogiup" class="nut-bam"><a href="https://www.facebook.com/phi6623/" style="color: red" >Trung Tâm Trợ Giúp</a></div></th>
+
+            <!-- <button onclick="" >Trung tâm Sợ giúp</button> -->
         </tr>
 
         <tr>
@@ -171,8 +177,11 @@
             }
             var ao1 = new Sanpham1('001', 'TEDDY MARCUS TEE - CREAM', 'Made in Vietnam fullsize', '350.000', 'https://bizweb.dktcdn.net/100/318/614/products/img-1169-1-compressed.jpg?v=1656325470137');
             var ao2 = new Sanpham1('002', 'TRANSFORMATION LOGO TEE - BLACK', 'Made in Vietnam fullsize M/l/xl', '450.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/14-2.jpg?v=1651246611000');
-            var ao3 = new Sanpham1('003', 'NOWSAIGON BRUSH TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '800.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/3-copy-2.jpg?v=1653109448000');
-            var arr = [ao1, ao2, ao3];
+            var ao3 = new Sanpham1('003', 'NOWSAIGON BRUSH TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '250.000', 'https://bizweb.dktcdn.net/thumb/grande/100/318/614/products/3-copy-2.jpg?v=1653109448000');
+            var ao4 = new Sanpham1('004', 'STRAIGHT NOWSAIGON TEE - BLACK', 'Based in Saigon/Made in Vietnam fullsize', '319.000', 'https://bizweb.dktcdn.net/100/318/614/products/527824b4-0d1c-41e6-bf1a-79e13088a9a6.jpg?v=1653109253683');
+            var ao5 = new Sanpham1('005', 'STRAIGHT NOWSAIGON TEE - WHITE', 'Based in Saigon/Made in Vietnam fullsize', '690.000', 'https://bizweb.dktcdn.net/100/318/614/products/z3406640475301-c29f1f0c9b5d6c55b915c3dec255d150-compressed.jpg?v=1653109331737');
+            var ao6 = new Sanpham1('006', 'BLOCK TEE - PINK', 'Based in Saigon/Made in Vietnam fullsize', '800.000', 'https://bizweb.dktcdn.net/100/318/614/products/img-0711-1.jpg?v=1656324958010');
+            var arr = [ao1, ao2, ao3, ao4, ao5, ao6];
             var quanli = new quanlisp(arr);
             function addSp() {
                 var id = document.getElementById('id').value;
@@ -220,6 +229,12 @@
                 clear();
             }
             quanli.danhsach();
+
+            function reload() {
+                return location.reload();
+            };
+            
         </script>
 </body>
+
 </html>
